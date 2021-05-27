@@ -15,6 +15,7 @@ const {_id} = useParams()
 const [loadingPage, setLoadingPage] = useState(false)
 
 const [changeUser , setChaneUser] = useState(false)
+const [switchTF , setSwitchTF] = useState(false)
 
 //console.log("recipe :",recipes)
 //var userId;
@@ -32,6 +33,7 @@ axios.get(`${API_URL}/api/recipe/view/${_id}`)
  const addRecipetoFavorite = () =>{
   
   let userId = props.auth.currentUser._id;
+    setSwitchTF(true)
     Swal.fire('Saved!', 'saved to your favorite list', 'success')
     axios.post(`${API_URL}/api/user/favorite` , {recipeId: _id ,  userId: userId })
     .then(data =>{
@@ -123,7 +125,11 @@ axios.get(`${API_URL}/api/recipe/view/${_id}`)
         {!props.isLoggedIn ? <> 
 
         </> : <>
+        {!switchTF? 
         <p className="w3-left"><button className="w3-button w3-white w3-border" onclick="likeFunction(this)" onClick={()=> addRecipetoFavorite()}><b><i className="fa fa-thumbs-up"></i> Save</b></button></p>
+        : <>
+        <p className="w3-left"><button className="w3-button w3-white w3-border" onclick="likeFunction(this)" ><b><i className="fa fa-thumbs-up"></i> Saved</b></button></p>
+        </>}
 
         <p className="w3-right"><button className="w3-button w3-black"  id="myBtn"><b>Print</b> </button></p>
         <p className="w3-clear"></p>
