@@ -90,7 +90,7 @@ axios.get(`${API_URL}/api/recipe`)
         </Route>
 
         <Route exact path='/oneUser/:_id'>
-          <OneUser auth = {auth}/>
+          <OneUser auth = {auth} isLoggedIn={auth.isLoggedIn}/>
           <Footer/>
         </Route>
         

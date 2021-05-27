@@ -26,7 +26,7 @@ axios.get(`${API_URL}/api/user/profile/${_id}`)
   setUser({data})
   setLoadingPage(true)
   })
-}, [changeUser])
+}, [changeUser], )
 
 //Follow 
 const follow = () =>{
@@ -94,11 +94,14 @@ const follow = () =>{
      </a>
    </div>
    <div>
+            {!props.isLoggedIn ? <> 
+
+             </> : <>
             {switchTF? 
-             <a className="btn btn-success btn-sm" onClick={()=> Unfollow()}>UnFollow!</a>
+             <a className="btn btn-danger btn-sm" onClick={()=> Unfollow()}>UnFollow!</a>
             :
             <a className="btn btn-success btn-sm" onClick={()=> follow()}>Follow!</a>
-            } 
+            } </>}
 
    </div>
  </div>
