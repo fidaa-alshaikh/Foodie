@@ -11,8 +11,8 @@ export default function CardAllRecipe(props) {
                    <img src={props.recipeImage} className="img-fluid" alt="..."/>
                </div>
                <div className="widget-body">
- 
-                   <h4 className="name"><a href="#">{props.recipeName}</a></h4>
+
+                   <h4 className="name"><Link to ={`/viewRecipe/${props._id}`}> <a href="">{props.recipeName}</a> </Link></h4>
                    <div className="job">{props.category}</div>
                    <div className="job">By {props.userName}</div>
                    <div className="text-center pt-5 pb-3">

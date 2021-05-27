@@ -257,20 +257,20 @@ const unfollow =(userIdToFollow)=>{
         
         <ul className="nav nav-tabs tabs-alt justify-content-center">
           <li className="nav-item">
-            <a className="nav-link py-4 active" href="#" onClick={(e) => openTab(e,'Recipes')}  >Recipes</a>
+            <a className="nav-link py-4 active" href="" onClick={(e) => openTab(e,'Recipes')}  >Recipes</a>
           
           </li>
           <li className="nav-item">
-            <a className="nav-link py-4"   href="#" onClick={(e) => openTab(e,'Followers')}>Followers</a>
+            <a className="nav-link py-4"   href="" onClick={(e) => openTab(e,'Followers')}>Followers</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link py-4" href="#" onClick={(e) => openTab(e,'Following')}>Following</a>
+            <a className="nav-link py-4" href="" onClick={(e) => openTab(e,'Following')}>Following</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link py-4" href="#" onClick={(e) => openTab(e,'Favorites')}>Favorites</a>
+            <a className="nav-link py-4" href="" onClick={(e) => openTab(e,'Favorites')}>Favorites</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link py-4" href="#" onClick={(e) => openTab(e,'Settings')}>Settings</a>
+            <a className="nav-link py-4" href="" onClick={(e) => openTab(e,'Settings')}>Settings</a>
           </li>
           
         </ul>
