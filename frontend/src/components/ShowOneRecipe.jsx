@@ -15,14 +15,14 @@ const {_id} = useParams()
 const [loadingPage, setLoadingPage] = useState(false)
 
 const [changeUser , setChaneUser] = useState(false)
-//console.log("recipe :",recipes)
 
+//console.log("recipe :",recipes)
+//var userId;
 useEffect(() => {
 axios.get(`${API_URL}/api/recipe/view/${_id}`)   
  .then(res =>{  
   console.log("one",res.data)   
   setRecipes(res.data)
-
   setLoadingPage(true)
   
    })
@@ -30,6 +30,7 @@ axios.get(`${API_URL}/api/recipe/view/${_id}`)
 
  //add favorite recipe
  const addRecipetoFavorite = () =>{
+  
   let userId = props.auth.currentUser._id;
     Swal.fire('Saved!', 'saved to your favorite list', 'success')
     axios.post(`${API_URL}/api/user/favorite` , {recipeId: _id ,  userId: userId })
@@ -94,9 +95,11 @@ axios.get(`${API_URL}/api/recipe/view/${_id}`)
       }
     
         // end image
+        
 
     return (
         <>{loadingPage && 
+         
           <div>
             <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"></link>
             
@@ -117,26 +120,25 @@ axios.get(`${API_URL}/api/recipe/view/${_id}`)
         <label><h3><strong>Ingredients:</strong></h3></label><p>{recipes.ingredients}</p>
         <label><h3><strong>Method:</strong></h3></label><p>{recipes.method}</p>
         
+        {!props.isLoggedIn ? <> 
+
+        </> : <>
         <p className="w3-left"><button className="w3-button w3-white w3-border" onclick="likeFunction(this)" onClick={()=> addRecipetoFavorite()}><b><i className="fa fa-thumbs-up"></i> Save</b></button></p>
 
         <p className="w3-right"><button className="w3-button w3-black"  id="myBtn"><b>Print</b> </button></p>
         <p className="w3-clear"></p>
+        </>}
       </div>
     </div>
     <hr/>
 
-
   </div>
+         <br/>
+            {!props.isLoggedIn ? <> 
 
-
-
-
-
-
-            <br/>
-
-
-            <Review recipes={recipes} onChangeInput={onChangeInput} uploadImage={uploadImage} onSubmit={onSubmit}/>
+             </> : <> 
+             <Review recipes={recipes} onChangeInput={onChangeInput} uploadImage={uploadImage} onSubmit={onSubmit}/> </>}
+            
         </div>
 
 
