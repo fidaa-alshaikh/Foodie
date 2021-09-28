@@ -9,7 +9,7 @@ import OneCardRecipe from './OneCardRecipe';
 import Swal from 'sweetalert2'
 import API_URL from '../APIconfig';
 
-
+//
 export default function Profile(props) {
 
     const { following,followers,_id } = props.auth.currentUser;
