@@ -2,6 +2,8 @@ import React from 'react'
 import jQuery from 'jquery'
 import { useHistory ,Link} from "react-router-dom";
 
+
+
 export default function NavBar(props) {
 	const history = useHistory();
 
@@ -45,13 +47,13 @@ export default function NavBar(props) {
 		<div className="container">
 			<a href="#" className="navbar-brand" style={{"font-size": "30px"}}>Foodie.com</a>
 			
-			<button type="button" className="navbar-toggler collapsed" data-toggle="collapse" data-target="#main-nav">
+			{/* <button  type="button" className="navbar-toggler collapsed" data-toggle="collapse" data-target="#main-nav">
 				<span className="menu-icon-bar"></span>
 				<span className="menu-icon-bar"></span>
 				<span className="menu-icon-bar"></span>
-			</button>
+			</button> */}
 			
-			<div id="main-nav" className="collapse navbar-collapse">
+			<div id="main-nav" >
 				<ul className="navbar-nav ml-auto">
 				
 					<li><Link to ="/" className="nav-item nav-link" style={{"font-size": "90.5%"}}> Home</Link></li>
